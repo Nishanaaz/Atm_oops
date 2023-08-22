@@ -1,9 +1,22 @@
 class Atm:
     # Init is a constructor a special method that executes the code automatically
+    __counter=1 
+    # counter=1
     def __init__ (self):    
         self.__pin=""
         self.__balance=0
+        self.s_no=Atm.__counter
+        Atm.__counter+=1
+        # type(self).counter+=1
         self.__menu()
+    @staticmethod  
+    def get_counter():
+        return Atm.__counter 
+    def set_counter(new_counter):
+        if type(new_counter)==int:
+            Atm.__counter=new_counter
+        else:
+            print("Not allowed ,should be an integer") 
         
     def __menu(self):
         user_input=int(input("""
@@ -71,9 +84,16 @@ class Atm:
         else:
             print("Invalid Pin")
         
-
-
-
+c1=Atm()
+c2=Atm()
+c3=Atm()
+c4=Atm()
+print(c1.s_no)
+print(c2.s_no)
+print(c3.s_no)
+print(c4.counter)
+print(Atm.counter)
+print(Atm.counter)
 
 
 
